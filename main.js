@@ -1,18 +1,23 @@
-const tabs = document.querySelectorAll('.tab'),
-      contents = document.querySelectorAll('.content');
 
 
-      tabs.forEach(function(item) {
-        item.addEventListener('click', function() {
-            tabs.forEach(function(item) {
-                item.classList.remove('active');
-            })
-            contents.forEach(function(el) {
-                el.classList.remove('active');
-                if(item.dataset.tab === el.dataset.content) {
-                    el.classList.add('active');
-                }
-            })
-            item.classList.add('active');
+const tabs = document.querySelectorAll('.tabs'),
+      cont = document.querySelectorAll('.cont');
+
+
+tabs.forEach(function(item) {
+    item.addEventListener('click', function() {
+
+        tabs.forEach(function(item) {
+            item.classList.remove('actv');
         })
-      })
+
+        cont.forEach(function(el) {
+            el.classList.remove('actv');
+            if(item.dataset.tab === el.dataset.cont) {
+                el.classList.add('actv');
+            }
+        })
+        item.classList.add('actv');
+    })
+});
+      
